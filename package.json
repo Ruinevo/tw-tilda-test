@@ -1,0 +1,47 @@
+{
+  "name": "tw-tilda-test",
+  "version": "0.0.1",
+  "scripts": {
+    "serve": "vue-cli-service serve --port 3000",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "lint:css": "stylelint src/**/*.vue"
+  },
+  "dependencies": {
+    "core-js": "^3.4.4",
+    "moment": "2.27.0",
+    "vue": "^2.6.10",
+    "vue-clickout": "1.0.0",
+    "vue-ripple-directive": "2.0.1",
+    "vue-router": "3.3.4",
+    "vue-uuid": "1.1.1",
+    "vuesax": "4.0.1-alpha.22",
+    "vuex": "^3.1.2"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^4.1.0",
+    "@vue/cli-plugin-eslint": "^4.1.0",
+    "@vue/cli-service": "^4.1.0",
+    "@vue/eslint-config-standard": "^4.0.0",
+    "babel-eslint": "^10.0.3",
+    "babel-plugin-transform-imports": "2.0.0",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^8.0.0",
+    "style-resources-loader": "^1.3.2",
+    "stylelint": "13.0.0",
+    "stylelint-scss": "3.14.2",
+    "vue-cli-plugin-style-resources-loader": "^0.1.4",
+    "vue-cli-plugin-svg-sprite": "^1.0.0",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "decription": "tw-tilda-test",
+  "license": "MIT",
+  "stylelint": {
+    "plagins": "stylelint-scss",
+    "rules": {
+      "at-rule-no-unknown": null
+    }
+  }
+}
