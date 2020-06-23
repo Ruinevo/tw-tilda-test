@@ -38,11 +38,14 @@ export default {
 <style lang="scss" scoped>
 .register {
   background: $white;
-  max-width: 500px;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   border-radius: 4px;
   box-shadow: $shadow;
-  text-align: center;
-  padding: 50px;
   &__item {
     margin-bottom: 20px;
   }

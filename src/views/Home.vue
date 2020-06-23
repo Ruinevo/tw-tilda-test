@@ -6,14 +6,14 @@
     <div class="home__content">
       <p class="home__description">Выберите созданную ранее страницу или создайте новую:</p>
       <transition-group name="list" class="home__pages" v-if="pages.length">
-        <li v-for="page in pages" class="home__page home-page" :key="page.id">
+        <li v-for="page in pages" class="home__page home-page" :key="page.id" @click="goToPage(page.id)">
           <p class="home-page__date">Дата создания: <br>{{ $moment(page.date).format('DD.MM.YYYY HH:mm') }}</p>
           <button class="home-page__delete" @click.stop="deletePage(page.id)">
             <SvgIcon name="trash" />
           </button>
         </li>
       </transition-group>
-      <div v-else>Вы не создали ни одной страницы</div>
+      <p class="home__description" v-else>Список Ваших страниц пока пуст...</p>
       <vs-button color="rgb(59,222,200)" gradient size="xl" type="submit" class="home__create" @click="createNewPage">Создать страницу</vs-button>
     </div>
   </section>
@@ -42,6 +42,9 @@ export default {
     },
     deletePage (id) {
       this.$store.commit('common/deletePage', id);
+    },
+    goToPage (id) {
+      this.$router.push({ name: 'Page', params: { page: id } });
     }
   }
 }
@@ -51,22 +54,17 @@ export default {
 $margin: 10px;
 
 .home {
-  background: $white;
-  box-shadow: $shadow;
-  border-radius: 4px;
   text-align: center;
-  width: 700px;
   padding: 50px;
   &__title {
     font-size: 16px;
-    color: $grey;
+    color: #000;
     margin-bottom: 20px;
   }
   &__create {
-    margin: 0 auto;
+    margin: 40px auto;
     width: 90%;
     max-width: 400px;
-    margin-top: 30px;
   }
   &__description {
     margin-top: 10px;
@@ -80,9 +78,7 @@ $margin: 10px;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    max-height: 500px;
-    overflow-x: hidden;
-    overflow-y: auto;
+    margin-top: 40px;
   }
   &__page {
     width: calc(50% - #{$margin});

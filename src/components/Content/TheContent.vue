@@ -13,8 +13,11 @@ export default {
 <style lang="scss" scoped>
 .content {
   display: flex;
-  flex: 1 1 auto;
   align-items: center;
   justify-content: center;
+  flex-grow: 1;
+  padding: 100px 0;
+  max-width: 980px;
+  margin: 0 auto;
 }
 </style>
