@@ -12,7 +12,7 @@
       <h2 class="header__email">
         {{ email }}
       </h2>
-      <vs-button danger border class="login__btn" @click="userSignOut">Выйти</vs-button>
+      <vs-button v-if="email" danger border class="login__btn" @click="userSignOut">Выйти</vs-button>
     </div>
   </header>
 </template>
