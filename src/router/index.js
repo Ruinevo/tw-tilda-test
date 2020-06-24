@@ -5,7 +5,7 @@ import store from '@/store';
 const routerOptions = [
   { path: '/signin', component: 'Login', name: 'Login' },
   { path: '/signup', component: 'Register', name: 'Register' },
-  { path: '/', component: 'Home', meta: { requiresAuth: true } },
+  { path: '/', component: 'Home', meta: { requiresAuth: true }, name: 'Home' },
   { path: '/constructor/:page', component: 'Page', meta: { requiresAuth: true }, name: 'Page' },
   { path: '*', component: 'NotFound' }
 ];
@@ -25,11 +25,11 @@ const router = new Router({
 })
 
 router.beforeEach((to, from, next) => {
-  /** clear errors before each routing */
+  /** чистим ошибки */
   if (store.state.error) {
     store.commit('setError', null);
   }
-  /** check user for auth */
+  /** проверка авторизации */
   const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
 
   const isAuthenticated = store.getters['auth/email'];

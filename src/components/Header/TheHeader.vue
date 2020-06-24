@@ -12,7 +12,8 @@
       <h2 class="header__email">
         {{ email }}
       </h2>
-      <vs-button danger border class="login__btn" @click="userSignOut">Выйти</vs-button>
+      <vs-button v-if="myPagesBtnShowCondition" warn gradient to="/">Мои страницы</vs-button>
+      <vs-button v-if="email" danger gradient class="login__btn" @click="userSignOut">Выйти</vs-button>
     </div>
   </header>
 </template>
@@ -28,7 +29,11 @@ export default {
     SvgIcon
   },
   computed: {
-    ...mapGetters('auth', ['email'])
+    ...mapGetters('auth', ['email']),
+    /** Условие для отображения кнопки "Мои страницы" */
+    myPagesBtnShowCondition () {
+      return this.email && this.$route.name !== 'Home';
+    }
   },
   methods: {
     ...mapActions('auth', ['userSignOut'])
@@ -46,6 +51,7 @@ export default {
   align-items: center;
   padding-left: 20px;
   padding-right: 20px;
+  box-shadow: $shadow;
   &__auth {
     display: flex;
     align-items: center;
@@ -54,7 +60,7 @@ export default {
   &__email {
     font-size: 12px;
     font-weight: 300;
-    color: $grey;
+    color: $black;
     margin-right: 20px;
   }
   &__logo {

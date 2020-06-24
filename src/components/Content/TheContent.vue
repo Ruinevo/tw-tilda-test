@@ -12,9 +12,10 @@ export default {
 
 <style lang="scss" scoped>
 .content {
-  display: flex;
-  flex: 1 1 auto;
-  align-items: center;
-  justify-content: center;
+  padding: 100px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
 }
 </style>
