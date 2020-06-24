@@ -12,7 +12,8 @@
       <h2 class="header__email">
         {{ email }}
       </h2>
-      <vs-button v-if="email" danger border class="login__btn" @click="userSignOut">Выйти</vs-button>
+      <vs-button v-if="$route.name === 'Page'" warn gradient to="/">Мои страницы</vs-button>
+      <vs-button v-if="email" danger gradient class="login__btn" @click="userSignOut">Выйти</vs-button>
     </div>
   </header>
 </template>
@@ -46,6 +47,7 @@ export default {
   align-items: center;
   padding-left: 20px;
   padding-right: 20px;
+  box-shadow: $shadow;
   &__auth {
     display: flex;
     align-items: center;
@@ -54,7 +56,7 @@ export default {
   &__email {
     font-size: 12px;
     font-weight: 300;
-    color: $grey;
+    color: $black;
     margin-right: 20px;
   }
   &__logo {

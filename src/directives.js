@@ -15,5 +15,13 @@ export default [
   {
     name: 'clickout',
     execute: onClickout
+  },
+  {
+    name: 'focus',
+    execute: {
+      inserted: function (el) {
+        el.focus()
+      }
+    }
   }
 ];

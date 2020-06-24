@@ -37,7 +37,7 @@ export default {
     createNewPage () {
       const id = uuid.v1();
       const date = new Date();
-      this.$store.commit('common/setPage', { id, date });
+      this.$store.commit('common/setPage', { id, date, elements: [] });
       this.$router.push({ name: 'Page', params: { page: id } });
     },
     deletePage (id) {

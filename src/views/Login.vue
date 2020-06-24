@@ -44,6 +44,7 @@ export default {
   flex-direction: column;
   border-radius: 4px;
   box-shadow: $shadow;
+  margin: 0 auto;
   &__item {
     margin-bottom: 20px;
   }

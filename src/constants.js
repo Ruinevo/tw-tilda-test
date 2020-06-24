@@ -18,11 +18,19 @@ export const ELEMENTS_TYPES = [
   {
     id: 1,
     name: 'Заголовок',
-    component: 'TypeTitle'
+    component: 'TypeTitle',
+    content: {
+      text: 'Нажмите для редактирования',
+      fontSize: 12,
+      color: '#00000'
+    }
   },
   {
     id: 2,
     name: 'Картинка',
-    component: 'TypeImage'
+    component: 'TypeImage',
+    content: {
+      url: ''
+    }
   }
 ];
