@@ -12,7 +12,7 @@
       <h2 class="header__email">
         {{ email }}
       </h2>
-      <vs-button v-if="$route.name === 'Page'" warn gradient to="/">Мои страницы</vs-button>
+      <vs-button v-if="myPagesBtnShowCondition" warn gradient to="/">Мои страницы</vs-button>
       <vs-button v-if="email" danger gradient class="login__btn" @click="userSignOut">Выйти</vs-button>
     </div>
   </header>
@@ -29,7 +29,11 @@ export default {
     SvgIcon
   },
   computed: {
-    ...mapGetters('auth', ['email'])
+    ...mapGetters('auth', ['email']),
+    /** Условие для отображения кнопки "Мои страницы" */
+    myPagesBtnShowCondition () {
+      return this.email && this.$route.name !== 'Home';
+    }
   },
   methods: {
     ...mapActions('auth', ['userSignOut'])

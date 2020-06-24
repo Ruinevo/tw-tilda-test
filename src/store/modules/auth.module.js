@@ -15,7 +15,6 @@ const actions = {
   async userSignUp ({ commit }, payload) {
     try {
       commit('setLoading', true, { root: true });
-      console.log(waitForTheAnswer);
       await waitForTheAnswer();
       commit('setUser', payload);
       commit('setLoading', false, { root: true });

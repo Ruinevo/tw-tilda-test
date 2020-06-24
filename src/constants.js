@@ -21,8 +21,7 @@ export const ELEMENTS_TYPES = [
     component: 'TypeTitle',
     content: {
       text: 'Нажмите для редактирования',
-      fontSize: 12,
-      color: '#00000'
+      fontSize: 12
     }
   },
   {

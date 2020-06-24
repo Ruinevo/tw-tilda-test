@@ -58,9 +58,6 @@ export default {
   justify-content: center;
   overflow: hidden;
   cursor: pointer;
-  &__photo {
-
-  }
   &__input {
     display: none;
   }
